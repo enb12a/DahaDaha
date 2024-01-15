@@ -21,7 +21,7 @@ const PromoDetail = ({ route }: { route: any }) => {
 
 
     useEffect(() => {
-
+        console.log(loadingPromotionDetail, "loadingPromotionDetailloadingPromotionDetail")
         const daysLeft = calculateRemainingDays(promotion?.RemainingText);
         setRemainingDays(daysLeft);
     }, [promotion]);
@@ -100,10 +100,12 @@ const PromoDetail = ({ route }: { route: any }) => {
 
             </View>
             <Text style={styles.TitleStyle}>{extractTextFromHtml(promotion.Title)}</Text>
-          <ScrollView style={{ marginHorizontal: normalize(15), marginBottom: normalize(80) }} >
+            <ScrollView style={{ marginHorizontal: normalize(15), marginBottom: normalize(80) }} >
                 <Text style={styles.descriptionStyle}>{extractTextFromHtml(promotion.Description)} </Text>
-                <Text style={{ ...styles.descriptionStyle, marginTop: normalize(15) }}>{extractTextFromHtml(promotion?.PromotionDetailItemAreas[0]?.Description)} </Text>
-            </ScrollView> 
+                <Text style={{ ...styles.descriptionStyle, marginTop: normalize(15) }}>
+                    {extractTextFromHtml(promotion?.PromotionDetailItemAreas?.[0]?.Description)}
+                </Text>
+            </ScrollView>
             <View style={{ marginHorizontal: normalize(15) }}>
                 <TouchableOpacity style={styles.HemenKatilButton} >
                     <Text style={{ color: "#FFF", fontSize: normalize(14), fontWeight: "700" }}>Hemen Katıl</Text>
