@@ -8,4 +8,4 @@
    
 //gradle version used in the application
 
-   Gradle Version => 8.0.1
+   Gradle Version => 8.3
